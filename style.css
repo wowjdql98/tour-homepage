@@ -1,0 +1,72 @@
+/* style.css */
+/*  
+  main color: #348e4c;
+*/
+:root{
+  --main-color: #348e4c;
+  --text-color: #333;
+  --heading1: 40px;
+  --heading2: 32px;
+
+}
+
+/* 초기화 */
+* {
+  margin: 0; padding: 0;
+}
+a { 
+  text-decoration: none;
+  color: var(--text-color);
+}
+ul { list-style-type: none;}
+body{ 
+  font-size: 100%;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--text-color);
+}
+html, body {
+  height: 100%;
+}
+
+#main-header {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 4px rgb(0,0,0,0.3);
+  position: relative;
+  height: 60px;
+}
+
+#main-header > h1 {
+  position: absolute;
+  left: 20px;
+  top: 10px
+  
+}
+
+#main-header > nav{
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  font-weight: 700;
+}
+
+#main-header > nav > ul > li{
+  display: inline-block;
+  margin-left: 3em;
+
+}
+#main-header > nav a:hover{
+  color: var(--main-color);
+}
+.main{
+  width: 100%;
+  /* 높이값은 헤더의 높이값이 플러스되기때문에 그만큼 커진다
+    떄문에 calc 함수로 높이값계산.
+  */
+  height: calc(100% - 60px);
+  background: #ccc;
+}
+
+.main .col{
+
+}
