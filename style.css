@@ -2,63 +2,67 @@
 /*  
   main color: #348e4c;
 */
-:root{
+:root {
   --main-color: #348e4c;
   --text-color: #333;
-  --heading1: 40px;
-  --heading2: 32px;
-
+  --heading1: 50px;
+  --heading2: 40px;
+  --basefontsize: 18px;
 }
 
 /* 초기화 */
 * {
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-a { 
+a {
   text-decoration: none;
   color: var(--text-color);
 }
-ul { list-style-type: none;}
-body{ 
+ul {
+  list-style-type: none;
+}
+body {
   font-size: 100%;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   color: var(--text-color);
 }
-html, body {
+html,
+body {
   height: 100%;
 }
 
 #main-header {
   width: 100%;
   background: #fff;
-  box-shadow: 0 2px 4px rgb(0,0,0,0.3);
+  box-shadow: 0 2px 4px rgb(0, 0, 0, 0.3);
   position: relative;
   height: 60px;
 }
 
 #main-header > h1 {
+  font-size: 0;
   position: absolute;
   left: 20px;
-  top: 10px
-  
+  top: 10px;
 }
 
-#main-header > nav{
+#main-header > nav {
   position: absolute;
   right: 30px;
   top: 20px;
   font-weight: 700;
 }
 
-#main-header > nav > ul > li{
+#main-header > nav > ul > li {
   display: inline-block;
   margin-left: 3em;
-
 }
-#main-header > nav a:hover{
+#main-header > nav a:hover {
   color: var(--main-color);
 }
-.main{
+.main {
   width: 100%;
   /* 높이값은 헤더의 높이값이 플러스되기때문에 그만큼 커진다
     떄문에 calc 함수로 높이값계산.
@@ -67,6 +71,76 @@ html, body {
   background: #ccc;
 }
 
-.main .col{
+.main .col {
+  width: calc(100% / 4);
+  height: 100%;
+  background: #abc;
+  position: relative;
+}
 
+.main .col h2 {
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  /* 중앙 수직위치 = 50% -요소높이 1/2 */
+  top: calc(50% - 109px / 2);
+}
+.main .col h2 span {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+
+.btn-link {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  /* padding: 5px 20px; */
+  width: 124px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 150px;
+  left: calc(50% - 124px / 2);
+  font-style: 1rem;
+}
+
+.btn-link:hover,
+.btn-link:active {
+  background: rgba(255, 255, 255, 0.75);
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+/* 첫번째 칼럼 배경스타일 지정 */
+.main .col:first-child {
+  background-image: url(../2022.06.03/투어홈페이지/beijing.jpg);
+  background-size: cover;
+  /* background-position: center; -중앙값*/
+}
+
+#section1,
+#section2,
+#section3,
+#section4 {
+  float: left;
+}
+
+.main #section2 {
+  background-image: url(../2022.06.03/투어홈페이지/osaka.jpg);
+  background-size: cover;
+}
+.main #section3 {
+  background-image: url(../2022.06.03/투어홈페이지/bangkok.jpg);
+  background-size: cover;
+}
+.main #section4 {
+  background-image: url(../2022.06.03/투어홈페이지/hongkong.jpg);
+  background-size: cover;
 }
